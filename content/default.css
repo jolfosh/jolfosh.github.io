@@ -1,0 +1,16 @@
+:root {
+    --color-j-1-hex: #ced8d3;    
+    --color-j-2-hex: #c39778;    
+    --color-j-3-hex: #9f785d;    
+    --color-j-4-hex: #927d6d;    
+    --color-j-5-hex: #d7cdbd;    
+}
+
+body {
+    color: var(--color-j-3-hex);
+    background-color: var(--color-j-1-hex);
+}
+
+#main {
+
+}
