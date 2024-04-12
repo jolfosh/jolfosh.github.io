@@ -1,12 +1,68 @@
 :root {
-    --color-j-1-hex: #ced8d3;    
-    --color-j-2-hex: #c39778;    
-    --color-j-3-hex: #9f785d;    
-    --color-j-4-hex: #927d6d;    
-    --color-j-5-hex: #d7cdbd;    
+ --dummy-var: 0;
 }
 
 body {
-    color: var(--color-j-3-hex);
-    background-color: var(--color-j-1-hex);
+	height: 100vh;
+	width: 100vw;
+  color: green;
+  background-color: black;
 }
+
+*:focus {
+	outline: none;
+}
+
+#console {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	color: green;
+	font-size: 2rem;
+	font-family: 'Jetbrains Mono';
+	font-weight: bolder;
+	display: flex;
+	flex-direction: column;
+}
+
+.cmdline {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+#console-textbox {
+	width: auto;
+	flex-grow: 1;
+	color: green;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	background-color: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
+	outline: none;
+	&:active {
+		border-color: rgba(0,0,0,0);
+	}
+}
+
+#scroll-lines {
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(
+	0deg,
+	rgba(100,200,100,0.05),
+	rgba(100,200,100,0.05) 50%,
+	rgba(0,0,0,0) 50%);
+	background-size: 100% 10px;
+	animation: scrolling-up 30s linear infinite;
+}
+
+@keyframes scrolling-up {
+	0% { background-position: 0% 0%; }
+	100% { background-position: 0% 100%; }
+}
+
