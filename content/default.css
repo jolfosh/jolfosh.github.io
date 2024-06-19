@@ -1,25 +1,31 @@
 :root {
  --dummy-var: 0;
+ /* --text-color: #02fc02; */
+ --text-color: #ffffff;
 }
 
-body {
-	height: 100vh;
-	width: 100vw;
-  color: green;
-  background-color: black;
+* {
+	padding: 0;
+	margin: 0;
 }
 
 *:focus {
 	outline: none;
 }
 
+body {
+	height: 100vh;
+	width: 100vw;
+  color: var(--text-color);
+  background-color: black;
+}
+
 #console {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	color: green;
-	font-size: 2rem;
-	font-family: 'Jetbrains Mono';
+  color: var(--text-color);
+	font-family: system-ui sans-serif monospace;
 	font-weight: bolder;
 	display: flex;
 	flex-direction: column;
@@ -33,17 +39,34 @@ body {
 
 #console-textbox {
 	width: auto;
+	margin-inline-start: 0.5rem;
 	flex-grow: 1;
-	color: green;
+  color: var(--text-color);
 	font-size: inherit;
 	font-family: inherit;
 	font-weight: inherit;
 	background-color: rgba(0,0,0,0);
 	border-color: rgba(0,0,0,0);
 	outline: none;
+
 	&:active {
 		border-color: rgba(0,0,0,0);
 	}
+}
+
+#vignette {
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(
+	rgba(0,0,0,0),
+	rgba(0,0,0,0.7) 200% 200%
+	);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-position: center center;
 }
 
 #scroll-lines {
@@ -58,7 +81,8 @@ body {
 	rgba(100,200,100,0.05) 50%,
 	rgba(0,0,0,0) 50%);
 	background-size: 100% 10px;
-	animation: scrolling-up 30s linear infinite;
+	background-blend-mode: difference;
+	animation: scrolling-up 60s linear infinite;
 }
 
 @keyframes scrolling-up {
