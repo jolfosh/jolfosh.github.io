@@ -41,7 +41,7 @@ const history = [''];
 const validCommands = ['', 'ls', 'dir', 'print', 'help', 'cd', 'echo'];
 var _console = document.querySelector('#console');
 var historyIndex = 0;
-var path = [];
+var path = ['home', 'tmpuser'];
 
 function print(txt){
 	let output = document.createElement('div');
@@ -105,7 +105,13 @@ function ls(args) {
 function dir(args) { ls(args); }
 
 function help(){
-	let helpText = `WIP. Help text soon`;
+	let helpText = `<br />Looks like you need some help!<br />Here is a list of valid commands:<br /><br />`
+	+ `ls [path]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lists files & directories in the current dir or the path if specified.<br /><br />`
+	+ `dir [path]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alias for "ls".<br /><br />`
+	+ `print [text]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prints the specified text to the terminal output.<br /><br />`
+	+ `cd [path]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changes the current active directory to the path specified.<br /><br />`
+	+ ``;
+
 	print(helpText);
 	return;
 }
