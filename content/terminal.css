@@ -1,0 +1,97 @@
+:root {
+ --dummy-var: 0;
+ /* --text-color: #02fc02; */
+ --text-color: #ffffff;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+  color: var(--text-color);
+  background-color: black;
+}
+
+#console {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  color: var(--text-color);
+	font-family: system-ui sans-serif monospace;
+	font-weight: bolder;
+	display: flex;
+	flex-direction: column;
+}
+
+.cmdline {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+#console-textbox {
+	width: auto;
+	margin-inline-start: 0.5rem;
+	flex-grow: 1;
+  color: var(--text-color);
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	background-color: rgba(0,0,0,0);
+	border-color: rgba(0,0,0,0);
+	outline: none;
+
+	&:active {
+		border-color: rgba(0,0,0,0);
+	}
+}
+
+#vignette {
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(
+	rgba(0,0,0,0),
+	rgba(0,0,0,0.7) 200% 200%
+	);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-position: center center;
+}
+
+#scroll-lines {
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(
+	0deg,
+	rgba(100,200,100,0.05),
+	rgba(100,200,100,0.05) 50%,
+	rgba(0,0,0,0) 50%);
+	background-size: 100% 10px;
+	background-blend-mode: difference;
+	animation: scrolling-down 60s linear infinite;
+}
+
+@keyframes scrolling-down {
+	0% { background-position: 0% 100%; }
+	100% { background-position: 0% 0%; }
+}
+
+@keyframes scrolling-up {
+	0% { background-position: 0% 0%; }
+	100% { background-position: 0% 100%; }
+}
+
